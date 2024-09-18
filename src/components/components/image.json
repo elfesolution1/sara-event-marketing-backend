@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

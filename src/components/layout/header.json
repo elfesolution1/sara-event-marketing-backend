@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_headers",
+  "info": {
+    "displayName": "header",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "headerLogo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.image"
+    },
+    "menuLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
+    },
+    "headerContact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.button"
+    }
+  }
+}
