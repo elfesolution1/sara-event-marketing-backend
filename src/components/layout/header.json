@@ -2,15 +2,11 @@
   "collectionName": "components_layout_headers",
   "info": {
     "displayName": "header",
-    "icon": "brush"
+    "icon": "brush",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "headerLogo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.image"
-    },
     "menuLink": {
       "type": "component",
       "repeatable": true,
@@ -20,6 +16,16 @@
       "type": "component",
       "repeatable": false,
       "component": "components.button"
+    },
+    "headerLogo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

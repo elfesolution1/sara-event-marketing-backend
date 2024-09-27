@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "folder",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heroImage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.image"
+    }
+  }
+}

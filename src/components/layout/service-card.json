@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_service_cards",
+  "info": {
+    "displayName": "ServiceCard",
+    "icon": "crop"
+  },
+  "options": {},
+  "attributes": {
+    "ServiceCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.card"
+    }
+  }
+}

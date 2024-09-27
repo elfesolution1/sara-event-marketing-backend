@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "homepages",
+  "collectionName": "service_pages",
   "info": {
-    "singularName": "homepage",
-    "pluralName": "homepages",
-    "displayName": "Home Page",
+    "singularName": "service-page",
+    "pluralName": "service-pages",
+    "displayName": "Service Page",
     "description": ""
   },
   "options": {
@@ -18,11 +18,7 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "layout.header",
-        "layout.hero",
-        "layout.about-section",
-        "layout.service-section",
-        "layout.our-acheivement"
+        "layout.service-card"
       ]
     }
   }

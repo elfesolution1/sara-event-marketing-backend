@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_images",
+  "info": {
+    "singularName": "portfolio-image",
+    "pluralName": "portfolio-images",
+    "displayName": "portfolioImage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "portfolio_images"
+    },
+    "alt": {
+      "type": "string"
+    }
+  }
+}
