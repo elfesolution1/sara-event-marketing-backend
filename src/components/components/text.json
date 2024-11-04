@@ -2,11 +2,15 @@
   "collectionName": "components_components_texts",
   "info": {
     "displayName": "Text",
-    "icon": "brush"
+    "icon": "brush",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
+      "type": "string"
+    },
+    "secondTitle": {
       "type": "string"
     }
   }

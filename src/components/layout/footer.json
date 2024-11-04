@@ -40,6 +40,17 @@
       "type": "component",
       "repeatable": true,
       "component": "components.image"
+    },
+    "ctaTitle": {
+      "type": "string"
+    },
+    "ctaDescription": {
+      "type": "string"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.button"
     }
   }
 }

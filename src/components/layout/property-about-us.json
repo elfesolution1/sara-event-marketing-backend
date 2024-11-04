@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_layout_property_aboutuses",
+  "info": {
+    "displayName": "PropertyAboutUs",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "aboutCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.text"
+    }
+  }
+}

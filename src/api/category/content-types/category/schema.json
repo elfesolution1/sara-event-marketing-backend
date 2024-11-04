@@ -13,12 +13,6 @@
   "attributes": {
     "Name": {
       "type": "string"
-    },
-    "portfolio_images": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::portfolio-image.portfolio-image",
-      "mappedBy": "category"
     }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "property_about_uses",
+  "info": {
+    "singularName": "property-about-us",
+    "pluralName": "property-about-uses",
+    "displayName": "PropertyAboutUs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.property-about-us",
+        "layout.testimonial",
+        "layout.our-acheivement",
+        "layout.partners",
+        "components.link",
+        "layout.service-card"
+      ]
+    }
+  }
+}

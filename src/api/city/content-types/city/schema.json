@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cities",
+  "info": {
+    "singularName": "city",
+    "pluralName": "cities",
+    "displayName": "City"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location.location",
+      "inversedBy": "cities"
+    },
+    "subcities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subcity.subcity",
+      "mappedBy": "city"
+    },
+    "property_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::property-list.property-list",
+      "mappedBy": "city"
+    }
+  }
+}

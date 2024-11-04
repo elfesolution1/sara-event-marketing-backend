@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_layout_testimonials",
+  "info": {
+    "displayName": "Testimonial",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "testimonailTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.text"
+    },
+    "testimoanilDescription": {
+      "type": "text"
+    },
+    "testimonialCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.card"
+    }
+  }
+}

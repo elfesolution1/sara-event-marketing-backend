@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_layout_faqs",
+  "info": {
+    "displayName": "FAQ",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "FAQTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.text"
+    },
+    "QA": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.text"
+    }
+  }
+}

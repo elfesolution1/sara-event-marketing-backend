@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "property_contact_pages",
+  "info": {
+    "singularName": "property-contact-page",
+    "pluralName": "property-contact-pages",
+    "displayName": "PropertyContactPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.contact-info"
+      ]
+    }
+  }
+}

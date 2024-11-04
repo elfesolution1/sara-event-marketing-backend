@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "launchings",
+  "info": {
+    "singularName": "launching",
+    "pluralName": "launchings",
+    "displayName": "Launching",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "components.image",
+        "layout.service-detail"
+      ]
+    }
+  }
+}

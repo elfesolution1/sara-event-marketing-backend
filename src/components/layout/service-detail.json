@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_layout_service_details",
+  "info": {
+    "displayName": "ServiceDetail",
+    "icon": "cog",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "serviceTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.text"
+    },
+    "serviceImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "serviceContent": {
+      "type": "blocks"
+    },
+    "serviceDetail2": {
+      "type": "blocks"
+    },
+    "serviceGallery": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

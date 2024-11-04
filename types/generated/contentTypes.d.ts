@@ -788,6 +788,48 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Schema.SingleType {
+  collectionName: 'about_pages';
+  info: {
+    singularName: 'about-page';
+    pluralName: 'about-pages';
+    displayName: 'About Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      [
+        'components.image',
+        'layout.about-section',
+        'layout.mission-vision',
+        'layout.why-choose-us',
+        'layout.gallery',
+        'layout.partners',
+        'layout.faq'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-page.about-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-page.about-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -800,11 +842,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String;
-    portfolio_images: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::portfolio-image.portfolio-image'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -816,6 +853,112 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCharityEventCharityEvent extends Schema.SingleType {
+  collectionName: 'charity_events';
+  info: {
+    singularName: 'charity-event';
+    pluralName: 'charity-events';
+    displayName: 'Charity Event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      ['components.image', 'layout.service-detail']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::charity-event.charity-event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::charity-event.charity-event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCityCity extends Schema.CollectionType {
+  collectionName: 'cities';
+  info: {
+    singularName: 'city';
+    pluralName: 'cities';
+    displayName: 'City';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    location: Attribute.Relation<
+      'api::city.city',
+      'manyToOne',
+      'api::location.location'
+    >;
+    subcities: Attribute.Relation<
+      'api::city.city',
+      'oneToMany',
+      'api::subcity.subcity'
+    >;
+    property_lists: Attribute.Relation<
+      'api::city.city',
+      'oneToMany',
+      'api::property-list.property-list'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::city.city', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::city.city', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConferencesAndSeminarConferencesAndSeminar
+  extends Schema.SingleType {
+  collectionName: 'conferences_and_seminars';
+  info: {
+    singularName: 'conferences-and-seminar';
+    pluralName: 'conferences-and-seminars';
+    displayName: 'Conferences and Seminar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      ['components.image', 'layout.service-detail']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::conferences-and-seminar.conferences-and-seminar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::conferences-and-seminar.conferences-and-seminar',
       'oneToOne',
       'admin::user'
     > &
@@ -855,6 +998,140 @@ export interface ApiContactFormContactForm extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactPageContactPage extends Schema.SingleType {
+  collectionName: 'contact_pages';
+  info: {
+    singularName: 'contact-page';
+    pluralName: 'contact-pages';
+    displayName: 'Contact Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<['components.image', 'layout.contact-info']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-page.contact-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-page.contact-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCorporateEventCorporateEvent extends Schema.SingleType {
+  collectionName: 'corporate_events';
+  info: {
+    singularName: 'corporate-event';
+    pluralName: 'corporate-events';
+    displayName: 'Corporate Event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      ['components.image', 'layout.service-detail']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::corporate-event.corporate-event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::corporate-event.corporate-event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFashionShowFashionShow extends Schema.SingleType {
+  collectionName: 'fashion_shows';
+  info: {
+    singularName: 'fashion-show';
+    pluralName: 'fashion-shows';
+    displayName: 'Fashion Show';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      ['components.image', 'layout.service-detail']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fashion-show.fashion-show',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::fashion-show.fashion-show',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGrandOpeningGrandOpening extends Schema.SingleType {
+  collectionName: 'grand_openings';
+  info: {
+    singularName: 'grand-opening';
+    pluralName: 'grand-openings';
+    displayName: 'Grand Opening';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      ['components.image', 'layout.service-detail']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::grand-opening.grand-opening',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::grand-opening.grand-opening',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Schema.SingleType {
   collectionName: 'homepages';
   info: {
@@ -874,7 +1151,10 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
         'layout.hero',
         'layout.about-section',
         'layout.service-section',
-        'layout.our-acheivement'
+        'layout.our-acheivement',
+        'layout.footer',
+        'layout.partners',
+        'layout.testimonial'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -895,12 +1175,82 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   };
 }
 
+export interface ApiLaunchingLaunching extends Schema.SingleType {
+  collectionName: 'launchings';
+  info: {
+    singularName: 'launching';
+    pluralName: 'launchings';
+    displayName: 'Launching';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      ['components.image', 'layout.service-detail']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::launching.launching',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::launching.launching',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLocationLocation extends Schema.CollectionType {
+  collectionName: 'locations';
+  info: {
+    singularName: 'location';
+    pluralName: 'locations';
+    displayName: 'Location';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.Enumeration<['Ethiopia', 'UAE']>;
+    cities: Attribute.Relation<
+      'api::location.location',
+      'oneToMany',
+      'api::city.city'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::location.location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::location.location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPortfolioImagePortfolioImage extends Schema.CollectionType {
   collectionName: 'portfolio_images';
   info: {
     singularName: 'portfolio-image';
     pluralName: 'portfolio-images';
     displayName: 'portfolioImage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -908,12 +1258,17 @@ export interface ApiPortfolioImagePortfolioImage extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    category: Attribute.Relation<
-      'api::portfolio-image.portfolio-image',
-      'manyToOne',
-      'api::category.category'
+    category: Attribute.Enumeration<
+      [
+        'corporate',
+        'conferenceandseminar',
+        'grandopening',
+        'productandmovie',
+        'launch',
+        'fashionshow',
+        'charity'
+      ]
     >;
-    alt: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -925,6 +1280,292 @@ export interface ApiPortfolioImagePortfolioImage extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::portfolio-image.portfolio-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPortfolioPagePortfolioPage extends Schema.SingleType {
+  collectionName: 'portfolio_pages';
+  info: {
+    singularName: 'portfolio-page';
+    pluralName: 'portfolio-pages';
+    displayName: 'Portfolio Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<['components.image']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::portfolio-page.portfolio-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::portfolio-page.portfolio-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductsAndMovieProductsAndMovie extends Schema.SingleType {
+  collectionName: 'products_and_movies';
+  info: {
+    singularName: 'products-and-movie';
+    pluralName: 'products-and-movies';
+    displayName: 'Products and Movie';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      ['components.image', 'layout.service-detail']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::products-and-movie.products-and-movie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::products-and-movie.products-and-movie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPropertyAboutUsPropertyAboutUs extends Schema.SingleType {
+  collectionName: 'property_about_uses';
+  info: {
+    singularName: 'property-about-us';
+    pluralName: 'property-about-uses';
+    displayName: 'PropertyAboutUs';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      [
+        'layout.property-about-us',
+        'layout.testimonial',
+        'layout.our-acheivement',
+        'layout.partners',
+        'components.link',
+        'layout.service-card'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::property-about-us.property-about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::property-about-us.property-about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPropertyContactFormPropertyContactForm
+  extends Schema.CollectionType {
+  collectionName: 'property_contact_forms';
+  info: {
+    singularName: 'property-contact-form';
+    pluralName: 'property-contact-forms';
+    displayName: 'PropertyContactForm';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Email: Attribute.Email;
+    Message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::property-contact-form.property-contact-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::property-contact-form.property-contact-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPropertyContactPagePropertyContactPage
+  extends Schema.SingleType {
+  collectionName: 'property_contact_pages';
+  info: {
+    singularName: 'property-contact-page';
+    pluralName: 'property-contact-pages';
+    displayName: 'PropertyContactPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    blocks: Attribute.DynamicZone<['layout.contact-info']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::property-contact-page.property-contact-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::property-contact-page.property-contact-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPropertyGalleryPropertyGallery
+  extends Schema.CollectionType {
+  collectionName: 'property_galleries';
+  info: {
+    singularName: 'property-gallery';
+    pluralName: 'property-galleries';
+    displayName: 'PropertyGallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    category: Attribute.Enumeration<['Villa', 'Condo']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::property-gallery.property-gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::property-gallery.property-gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPropertyHomePropertyHome extends Schema.SingleType {
+  collectionName: 'property_homes';
+  info: {
+    singularName: 'property-home';
+    pluralName: 'property-homes';
+    displayName: 'PropertyHome';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    blocks: Attribute.DynamicZone<
+      [
+        'layout.header',
+        'components.card',
+        'layout.footer',
+        'layout.partners',
+        'layout.property-about-us',
+        'layout.our-acheivement'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::property-home.property-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::property-home.property-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPropertyListPropertyList extends Schema.CollectionType {
+  collectionName: 'property_lists';
+  info: {
+    singularName: 'property-list';
+    pluralName: 'property-lists';
+    displayName: 'PropertyList';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Description: Attribute.Blocks;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Price: Attribute.Integer;
+    Bedrooms: Attribute.Integer;
+    Icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    city: Attribute.Relation<
+      'api::property-list.property-list',
+      'manyToOne',
+      'api::city.city'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::property-list.property-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::property-list.property-list',
       'oneToOne',
       'admin::user'
     > &
@@ -945,7 +1586,7 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String;
-    blocks: Attribute.DynamicZone<['layout.service-card']>;
+    blocks: Attribute.DynamicZone<['layout.service-card', 'components.image']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -957,6 +1598,41 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::service-page.service-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSubcitySubcity extends Schema.CollectionType {
+  collectionName: 'subcities';
+  info: {
+    singularName: 'subcity';
+    pluralName: 'subcities';
+    displayName: 'Subcity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    city: Attribute.Relation<
+      'api::subcity.subcity',
+      'manyToOne',
+      'api::city.city'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::subcity.subcity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::subcity.subcity',
       'oneToOne',
       'admin::user'
     > &
@@ -982,11 +1658,30 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::category.category': ApiCategoryCategory;
+      'api::charity-event.charity-event': ApiCharityEventCharityEvent;
+      'api::city.city': ApiCityCity;
+      'api::conferences-and-seminar.conferences-and-seminar': ApiConferencesAndSeminarConferencesAndSeminar;
       'api::contact-form.contact-form': ApiContactFormContactForm;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::corporate-event.corporate-event': ApiCorporateEventCorporateEvent;
+      'api::fashion-show.fashion-show': ApiFashionShowFashionShow;
+      'api::grand-opening.grand-opening': ApiGrandOpeningGrandOpening;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::launching.launching': ApiLaunchingLaunching;
+      'api::location.location': ApiLocationLocation;
       'api::portfolio-image.portfolio-image': ApiPortfolioImagePortfolioImage;
+      'api::portfolio-page.portfolio-page': ApiPortfolioPagePortfolioPage;
+      'api::products-and-movie.products-and-movie': ApiProductsAndMovieProductsAndMovie;
+      'api::property-about-us.property-about-us': ApiPropertyAboutUsPropertyAboutUs;
+      'api::property-contact-form.property-contact-form': ApiPropertyContactFormPropertyContactForm;
+      'api::property-contact-page.property-contact-page': ApiPropertyContactPagePropertyContactPage;
+      'api::property-gallery.property-gallery': ApiPropertyGalleryPropertyGallery;
+      'api::property-home.property-home': ApiPropertyHomePropertyHome;
+      'api::property-list.property-list': ApiPropertyListPropertyList;
       'api::service-page.service-page': ApiServicePageServicePage;
+      'api::subcity.subcity': ApiSubcitySubcity;
     }
   }
 }

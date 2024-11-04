@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_contact_infos",
+  "info": {
+    "displayName": "ContactInfo",
+    "icon": "cloud"
+  },
+  "options": {},
+  "attributes": {
+    "contactTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.text"
+    },
+    "contactDescription": {
+      "type": "string"
+    },
+    "getInTouch": {
+      "type": "string"
+    },
+    "contactCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.card"
+    }
+  }
+}

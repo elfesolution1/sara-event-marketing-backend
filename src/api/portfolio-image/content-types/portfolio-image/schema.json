@@ -4,7 +4,8 @@
   "info": {
     "singularName": "portfolio-image",
     "pluralName": "portfolio-images",
-    "displayName": "portfolioImage"
+    "displayName": "portfolioImage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,23 +16,27 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "portfolio_images"
-    },
-    "alt": {
-      "type": "string"
+      "type": "enumeration",
+      "enum": [
+        "corporate",
+        "conferenceandseminar",
+        "grandopening",
+        "productandmovie",
+        "launch",
+        "fashionshow",
+        "charity"
+      ]
     }
   }
 }

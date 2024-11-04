@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "conferences_and_seminars",
+  "info": {
+    "singularName": "conferences-and-seminar",
+    "pluralName": "conferences-and-seminars",
+    "displayName": "Conferences and Seminar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "components.image",
+        "layout.service-detail"
+      ]
+    }
+  }
+}

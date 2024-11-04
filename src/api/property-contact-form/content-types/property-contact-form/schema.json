@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "property_contact_forms",
+  "info": {
+    "singularName": "property-contact-form",
+    "pluralName": "property-contact-forms",
+    "displayName": "PropertyContactForm"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Message": {
+      "type": "text"
+    }
+  }
+}

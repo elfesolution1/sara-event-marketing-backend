@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "components.image",
+        "layout.about-section",
+        "layout.mission-vision",
+        "layout.why-choose-us",
+        "layout.gallery",
+        "layout.partners",
+        "layout.faq"
+      ]
+    }
+  }
+}

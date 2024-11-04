@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "charity_events",
+  "info": {
+    "singularName": "charity-event",
+    "pluralName": "charity-events",
+    "displayName": "Charity Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "components.image",
+        "layout.service-detail"
+      ]
+    }
+  }
+}

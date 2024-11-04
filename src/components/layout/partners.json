@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_layout_partners",
+  "info": {
+    "displayName": "Partners",
+    "icon": "strikeThrough",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "partnerDescription": {
+      "type": "text"
+    },
+    "partnerImage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.image"
+    },
+    "partnerTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.text"
+    }
+  }
+}

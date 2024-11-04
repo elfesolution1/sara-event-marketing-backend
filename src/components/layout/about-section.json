@@ -28,6 +28,14 @@
     },
     "title": {
       "type": "string"
+    },
+    "aboutTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.text"
+    },
+    "aboutDetail": {
+      "type": "blocks"
     }
   }
 }

@@ -18,7 +18,8 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "layout.service-card"
+        "layout.service-card",
+        "components.image"
       ]
     }
   }

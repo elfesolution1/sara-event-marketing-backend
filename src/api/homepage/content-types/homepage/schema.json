@@ -22,7 +22,10 @@
         "layout.hero",
         "layout.about-section",
         "layout.service-section",
-        "layout.our-acheivement"
+        "layout.our-acheivement",
+        "layout.footer",
+        "layout.partners",
+        "layout.testimonial"
       ]
     }
   }

@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "property_homes",
+  "info": {
+    "singularName": "property-home",
+    "pluralName": "property-homes",
+    "displayName": "PropertyHome",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.header",
+        "components.card",
+        "layout.footer",
+        "layout.partners",
+        "layout.property-about-us",
+        "layout.our-acheivement"
+      ]
+    }
+  }
+}

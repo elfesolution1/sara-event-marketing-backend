@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_layout_mission_visions",
+  "info": {
+    "displayName": "MissionVision",
+    "icon": "gate"
+  },
+  "options": {},
+  "attributes": {
+    "missionTitle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.text"
+    },
+    "missionDescription": {
+      "type": "string"
+    },
+    "missionCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.card"
+    }
+  }
+}
