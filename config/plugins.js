@@ -12,4 +12,11 @@ module.exports = {
       },
     },
   },
+    upload: {
+    config: {
+      providerOptions: {
+        allowedFormats: ['webp', 'jpeg', 'jpg', 'png', 'svg', 'gif'],
+      },
+    },
+  },
 };
