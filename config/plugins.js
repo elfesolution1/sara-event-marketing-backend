@@ -18,6 +18,8 @@ module.exports = {
         cloud_name:"dkqlrnz6r", // Use environment variables for sensitive data
         api_key:"853636429845778",
         api_secret:"7YT2li6_wmR2hMQ-TcV1P1OpRyo",
+        fetch_format: 'auto',
+        secure: true,
       },
       actionOptions: {
         upload: {}, // Default action options
